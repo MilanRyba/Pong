@@ -25,6 +25,8 @@ namespace Pong {
 
 		parlcd_hx8357_init(mParallelLCDMemBase);
 
+		mFont.Create(this);
+
 		ClearAndDraw(0xff00);
 	}
 
@@ -83,7 +85,20 @@ namespace Pong {
 		}
 	}
 
-	bool Renderer::ClipPixel(int inX, int inY)
+	void Renderer::DrawText(uint32_t inX, uint32_t inY, const char* inText, uint16_t inColor)
+	{
+		mFont.DrawText(inX, inY, inText, inColor);
+	}
+
+	void Renderer::DrawPixel(uint32_t inX, uint32_t inY, uint16_t inColor)
+	{
+		if (ClipPixel(inX, inY))
+			return;
+
+		mImageData[inX + inY * mWidth] = inColor;
+	}
+
+	bool Renderer::ClipPixel(int inX, int inY) const
 	{
 		return inX < 0 || inX >= mWidth || inY < 0 || inY >= mHeight;
 	}

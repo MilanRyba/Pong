@@ -29,7 +29,14 @@ namespace Pong {
 
 	void MainMenu::OnRender(Renderer& inRenderer)
 	{
-		// Render here
+		const uint32_t y_offset = 60;
+		for (int i = 0; i < mOptions.size(); i++)
+		{
+			if (mSelected == i)
+				inRenderer.DrawText(30, 10 + i * 60, mOptions[i], 0xffff);
+			else
+				inRenderer.DrawText(30, 10 + i * 60, mOptions[i], 0xf0f0);
+		}
 	}
 
 }

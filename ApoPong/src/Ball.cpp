@@ -64,6 +64,8 @@ namespace Pong {
 		mDeltaY += mDeltaY < 0 ? -1 : 1;
 	}
 
+	// TODO: When InsideHole returns true, set some value to indicate 
+	// that the ball should only move in this direction and thus hit the wall
 	bool Ball::Overlaps(Paddle& inPaddle, bool inAttrition)
 	{
 		// Check if the ball is above or below the paddle
@@ -83,19 +85,27 @@ namespace Pong {
 
 				// Move the ball out of the paddle
 				mX += paddle_x - mX;
+				
+				if (inAttrition)
+					inPaddle.CreateHole(mY + 2);
 
 				return true;
 			}
-
-
 		}
 		else
 		{
 			// Right paddle
 			if (mX < inPaddle.GetX() && mX + cSize > inPaddle.GetX())
 			{
+				if (inAttrition && inPaddle.InsideHole(mY + 2))
+					return false;
+
 				// Move the ball out of the paddle
 				mX -= mX + cSize - inPaddle.GetX();
+
+				if (inAttrition)
+					inPaddle.CreateHole(mY + 2);
+
 				return true;
 			}
 		}

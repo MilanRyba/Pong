@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include <vector>
 
 namespace Pong {
 
@@ -16,21 +17,40 @@ namespace Pong {
 		bool InsideHole(uint32_t inY)
 		{
 			uint32_t y = inY - Y;
-			bool inside = false;
-
-			for (uint32_t hole : mHoles)
-				inside |= hole - 2 < y && hole + 2 > y;
-
-			return inside;
+			for (const Hole& hole : mHoles)
+			{
+				if (hole.Contains(y))
+					return true;
+			}
+			return false;
 		}
 
 		void CreateHole(uint32_t inY)
 		{
-			// Go through all holes and find if this one overlaps any
-			// If not, push back a new hole
-			// If yes, extend the first we found check for collisions with other holes in that direction
+			uint32_t y = inY - Y;
+			Hole new_hole(y - 2, y + 2);
 
-			mHoles.push_back(inY - Y);
+			if (mHoles.empty())
+			{
+				mHoles.push_back(new_hole);
+				return;
+			}
+
+			bool collision = false;
+			for (Hole& hole : mHoles)
+			{
+				if (hole.Overlaps(new_hole) || hole.Touches(new_hole))
+				{
+					hole.Encapsulate(new_hole);
+					collision = true;
+					break;
+				}
+			}
+
+			if (collision)
+				MergeHoles();
+			else
+				mHoles.push_back(new_hole);
 		}
 
 		uint32_t GetX() const { return mX; }
@@ -44,8 +64,55 @@ namespace Pong {
 		const uint32_t mWidth = 6;
 		const uint32_t mHeight = 50;
 
-		// Make this 8 bit and each int will represent a single pixel, thus we can create a array of 50 int's
-		std::vector<uint32_t> mHoles;
+		struct Hole
+		{
+			uint32_t Min;
+			uint32_t Max;
+
+			Hole(uint32_t inMin, uint32_t inMax) : Min(inMin), Max(inMax) {}
+
+			bool Overlaps(const Hole& inOther) const
+			{
+				return !(Min > inOther.Max || Max < inOther.Min);
+			}
+
+			bool Touches(const Hole& inOther) const
+			{
+				return (Min - 1 == inOther.Max) || (Max + 1 == inOther.Min);
+			}
+
+			void Encapsulate(const Hole& inRHS)
+			{
+				Min = std::min(Min, inRHS.Min);
+				Max = std::max(Max, inRHS.Max);
+			}
+
+			bool Contains(const uint32_t inPoint) const
+			{
+				return Min <= inPoint && Max >= inPoint;
+			}
+		};
+
+		void MergeHoles()
+		{
+			for (int i = 0; i < mHoles.size(); i++)
+			{
+				Hole& hole1 = mHoles[i];
+				for (int j = i + 1; j < mHoles.size(); j++)
+				{
+					Hole& hole2 = mHoles[j];
+
+					if (hole1.Overlaps(hole2) || hole1.Touches(hole2))
+					{
+						hole1.Encapsulate(hole2);
+						mHoles.erase(mHoles.begin() + j);
+					}
+				}
+			}
+		}
+
+	public:
+		std::vector<Hole> mHoles;
 	};
 
 }

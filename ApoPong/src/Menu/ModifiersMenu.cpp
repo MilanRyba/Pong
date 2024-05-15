@@ -47,7 +47,15 @@ namespace Pong {
 
 	void ModifiersMenu::OnRender(Renderer& inRenderer)
 	{
-		// Render here
+		const uint32_t y_offset = 60;
+		for (int i = 0; i < mModifiers.size(); i++)
+		{
+			const ModifierState& mod = mModifiers[i];
+			uint32_t x = mSelected == i ? 50 : 30;
+			uint16_t color = mod.Enabled ? 0xffff : 0xf0f0;
+
+			inRenderer.DrawText(x, 10 + i * 60, sGetModifierName(mod.Mod), color);
+		}
 	}
 
 }

@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ball.cpp" />
+    <ClCompile Include="src\Font.cpp" />
     <ClCompile Include="src\Menu\GameUI.cpp" />
     <ClCompile Include="src\Menu\MainMenu.cpp" />
     <ClCompile Include="src\Menu\ModifiersMenu.cpp" />
@@ -29,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ball.h" />
+    <ClInclude Include="src\Font.h" />
     <ClInclude Include="src\Menu\GameUI.h" />
     <ClInclude Include="src\Menu\MainMenu.h" />
     <ClInclude Include="src\Menu\Menu.h" />
