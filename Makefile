@@ -9,8 +9,8 @@ LDFLAGS += -static
 LDLIBS += -lrt -lpthread
 #LDLIBS += -lm
 
-SOURCES = Main.cpp src/Pong.cpp src/Renderer.cpp src/Peripherals.cpp src/Font.cpp src/Ball.cpp src/Paddle.cpp
-SOURCES += src/Menu/GameUI.cpp src/Menu/MainMenu.cpp src/Menu/ModifiersMenu.cpp
+SOURCES = Main.cpp Source/Pong.cpp Source/Renderer.cpp Source/Peripherals.cpp Source/Font.cpp Source/Ball.cpp Source/Paddle.cpp
+SOURCES += Source/Menu/GameUI.cpp Source/Menu/MainMenu.cpp Source/Menu/ModifiersMenu.cpp
 SOURCES += mz_apo/mzapo_phys.c mz_apo/mzapo_parlcd.c mz_apo/serialize_lock.c
 SOURCES += mz_apo/font_prop14x16.c mz_apo/font_rom8x16.c
 TARGET_EXE = pong

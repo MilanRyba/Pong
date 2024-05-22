@@ -18,7 +18,7 @@
 // TODO: Test if pressing two knobs is ok
 int main()
 {
-    Pong::Pong pong;
+    Application::Application pong;
     std::cout << "Running\n";
     pong.Run();
     std::cout << "Exited\n";

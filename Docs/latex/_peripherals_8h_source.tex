@@ -1,0 +1,65 @@
+\doxysection{Peripherals.\+h}
+\hypertarget{_peripherals_8h_source}{}\label{_peripherals_8h_source}\index{Source/Peripherals.h@{Source/Peripherals.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../mz\_apo/mzapo\_phys.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../mz\_apo/mzapo\_regs.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}cstdint"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }Pong\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pong_1_1_peripherals}{Peripherals}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_peripherals_a7f48700e0a4ef83d91e735fc51326391}{Peripherals}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_peripherals_a740f0f1ef89a759dbaa4429b130387e1}{Update}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ Red,\ Green,\ Blue}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pong_1_1_peripherals_a69767bbd33c061e4f212f51985436dae}{IsKnobPressed}}(\mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}}\ inColor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pong_1_1_peripherals_a79d67a4cf68e6012f90cd79bded2488f}{IsKnobDown}}(\mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}}\ inColor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pong_1_1_peripherals_a8c101bdf78ffeafa25a9b3234135bb9e}{GetKnobPosition}}(\mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}}\ inColor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_pong_1_1_peripherals_ad18c9b61f7c255ab4b1b951e83adb9ac}{GetKnobDelta}}(\mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}}\ inColor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_peripherals_a38da5ef82a5c64e59397e414ad97cad2}{SetLEDLine}}(uint32\_t\ inValue);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_peripherals_a8146609ee9616a01a69f87ef60af47aa}{SetRGBLEDs}}(uint32\_t\ inValue);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResolvePressedEvents();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ uint8\_t*\ mMemBase\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mData\ =\ 0;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ uint16\_t\ mRedPosition\ =\ 0;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ uint16\_t\ mGreenPosition\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ uint16\_t\ mBluePosition\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ int8\_t\ mRedDelta\ =\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ int8\_t\ mGreenDelta\ =\ 0;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ int8\_t\ mBlueDelta\ =\ 0;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mRedDown\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mGreenDown\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mBlueDown\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mRedPressed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mGreenPressed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mBluePressed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}}
+
+\end{DoxyCode}

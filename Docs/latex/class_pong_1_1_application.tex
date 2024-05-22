@@ -1,0 +1,71 @@
+\doxysection{Pong\+::Application Class Reference}
+\hypertarget{class_pong_1_1_application}{}\label{class_pong_1_1_application}\index{Pong::Application@{Pong::Application}}
+
+
+Contains the entire application.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pong_1_1_application_abb4377999fb8450d56fb87f3a1d3a294}\label{class_pong_1_1_application_abb4377999fb8450d56fb87f3a1d3a294} 
+{\bfseries Application} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_af8abee2d5931c7c04e14e5a7386f4230}\label{class_pong_1_1_application_af8abee2d5931c7c04e14e5a7386f4230} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Application} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_ac278407acd4a0687b03066af4c7b90c9}\label{class_pong_1_1_application_ac278407acd4a0687b03066af4c7b90c9} 
+void {\bfseries Run} ()
+\begin{DoxyCompactList}\small\item\em The main loop. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_acf0308eb04a079a5467cb30f6b3208a4}\label{class_pong_1_1_application_acf0308eb04a079a5467cb30f6b3208a4} 
+void {\bfseries On\+Update} ()
+\begin{DoxyCompactList}\small\item\em Update the application. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_a540e6e70b7693cabe8a0b6a88547efab}\label{class_pong_1_1_application_a540e6e70b7693cabe8a0b6a88547efab} 
+void {\bfseries On\+Render} ()
+\begin{DoxyCompactList}\small\item\em Render the application to the LCD display. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_a65822792f0d82b7d0c3d85abd5e9db85}\label{class_pong_1_1_application_a65822792f0d82b7d0c3d85abd5e9db85} 
+void {\bfseries Start\+Game} ()
+\begin{DoxyCompactList}\small\item\em Start a brand new game. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_afea3bb041e8863e0b539a3b27b339b85}\label{class_pong_1_1_application_afea3bb041e8863e0b539a3b27b339b85} 
+void {\bfseries Return\+To\+Main\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Return from Playing state back to \doxylink{class_pong_1_1_menu}{Menu} state. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_a124d9e9ab3c92170308c2b5d5d898988}\label{class_pong_1_1_application_a124d9e9ab3c92170308c2b5d5d898988} 
+void {\bfseries Set\+Modifier} (Modifiers\+Menu\+::\+Modifier\+State in\+Modifier)
+\item 
+\Hypertarget{class_pong_1_1_application_a07e72ba797e26ff6ac5b81986a0f9622}\label{class_pong_1_1_application_a07e72ba797e26ff6ac5b81986a0f9622} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Set\+Menu} ()
+\item 
+\Hypertarget{class_pong_1_1_application_a6235df4ae9063ad9ee59e3f0dc00f8cf}\label{class_pong_1_1_application_a6235df4ae9063ad9ee59e3f0dc00f8cf} 
+void {\bfseries Close} ()
+\begin{DoxyCompactList}\small\item\em Close the application. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_a261ded4f5cb2decd8cf90e33f5579cb0}\label{class_pong_1_1_application_a261ded4f5cb2decd8cf90e33f5579cb0} 
+uint32\+\_\+t {\bfseries Get\+Left\+Score} () const
+\begin{DoxyCompactList}\small\item\em Getters. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_a5073603c9e0521cf6dcacc684026a915}\label{class_pong_1_1_application_a5073603c9e0521cf6dcacc684026a915} 
+uint32\+\_\+t {\bfseries Get\+Right\+Score} () const
+\item 
+\Hypertarget{class_pong_1_1_application_a27fbe3233666f8242e5fd138ac701ab9}\label{class_pong_1_1_application_a27fbe3233666f8242e5fd138ac701ab9} 
+Modifier {\bfseries Get\+Modifier} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pong_1_1_application_aac8260a9be0f2446b7aeb4e5c2ed7c8c}\label{class_pong_1_1_application_aac8260a9be0f2446b7aeb4e5c2ed7c8c} 
+static constexpr uint32\+\_\+t {\bfseries c\+Width} = 480
+\begin{DoxyCompactList}\small\item\em Width of the board\textquotesingle{}s LCD display. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_application_a61fa761212613d886e0780631920903c}\label{class_pong_1_1_application_a61fa761212613d886e0780631920903c} 
+static constexpr uint32\+\_\+t {\bfseries c\+Height} = 320
+\begin{DoxyCompactList}\small\item\em Height of the board\textquotesingle{}s LCD display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the entire application. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/Application.\+h\item 
+Source/Application.\+cpp\end{DoxyCompactItemize}

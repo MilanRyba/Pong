@@ -1,0 +1,69 @@
+\doxysection{Pong\+::Ball Class Reference}
+\hypertarget{class_pong_1_1_ball}{}\label{class_pong_1_1_ball}\index{Pong::Ball@{Pong::Ball}}
+
+
+Contains the structure of a ball.  
+
+
+
+
+{\ttfamily \#include $<$Ball.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pong_1_1_ball_ae316d37696c2db1eb8eb73c9f4fb7bdf}\label{class_pong_1_1_ball_ae316d37696c2db1eb8eb73c9f4fb7bdf} 
+{\bfseries Ball} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_ball_a1d3bbe4984e924c6ec089281691af717}\label{class_pong_1_1_ball_a1d3bbe4984e924c6ec089281691af717} 
+{\bfseries Ball} (int inX, int inY)
+\item 
+\Hypertarget{class_pong_1_1_ball_a2b32f14aa6e959733d7566beb98a8c1d}\label{class_pong_1_1_ball_a2b32f14aa6e959733d7566beb98a8c1d} 
+void {\bfseries On\+Update} ()
+\begin{DoxyCompactList}\small\item\em Update ball\textquotesingle{}s position. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_ball_a16a83ab9ec8291be2d769869a239ddb7}\label{class_pong_1_1_ball_a16a83ab9ec8291be2d769869a239ddb7} 
+void {\bfseries Launch} ()
+\begin{DoxyCompactList}\small\item\em Launch the ball in a random direction from the starting position. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_ball_a4bc7eb4d67aef4da45c6e6ac4215936f}\label{class_pong_1_1_ball_a4bc7eb4d67aef4da45c6e6ac4215936f} 
+void {\bfseries Accelerate} ()
+\begin{DoxyCompactList}\small\item\em Increase ball speed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pong_1_1_ball_a2dde5f6207e45303c8ae5f466ade4bad}{Overlaps}} (\mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}} \&in\+Paddle, bool in\+Attrition)
+\item 
+\Hypertarget{class_pong_1_1_ball_aa15065952b7139302c319bce04178c56}\label{class_pong_1_1_ball_aa15065952b7139302c319bce04178c56} 
+void {\bfseries Bounce\+Off} (const \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}} \&in\+Paddle)
+\begin{DoxyCompactList}\small\item\em Bounce the ball off of a paddle. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_ball_a2f871dbad7473284349754a77283d6f0}\label{class_pong_1_1_ball_a2f871dbad7473284349754a77283d6f0} 
+int {\bfseries GetX} () const
+\begin{DoxyCompactList}\small\item\em Getters. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_ball_a4414495d92120dc45484e1a1181c94e2}\label{class_pong_1_1_ball_a4414495d92120dc45484e1a1181c94e2} 
+int {\bfseries GetY} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pong_1_1_ball_a82390d74fc8a5a32b3c033a234b22231}\label{class_pong_1_1_ball_a82390d74fc8a5a32b3c033a234b22231} 
+static constexpr uint32\+\_\+t {\bfseries c\+Size} = 5
+\begin{DoxyCompactList}\small\item\em \doxylink{class_pong_1_1_ball}{Ball} size in pixels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the structure of a ball. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pong_1_1_ball_a2dde5f6207e45303c8ae5f466ade4bad}\label{class_pong_1_1_ball_a2dde5f6207e45303c8ae5f466ade4bad} 
+\index{Pong::Ball@{Pong::Ball}!Overlaps@{Overlaps}}
+\index{Overlaps@{Overlaps}!Pong::Ball@{Pong::Ball}}
+\doxysubsubsection{\texorpdfstring{Overlaps()}{Overlaps()}}
+{\footnotesize\ttfamily bool Pong\+::\+Ball\+::\+Overlaps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}} \&}]{in\+Paddle,  }\item[{bool}]{in\+Attrition }\end{DoxyParamCaption})}
+
+Test if the ball overlaps with a paddle 
+\begin{DoxyParams}{Parameters}
+{\em in\+Attrition} & Whether or not the \textquotesingle{}Attrition\textquotesingle{} modifier is enabled \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/Ball.\+h\item 
+Source/Ball.\+cpp\end{DoxyCompactItemize}

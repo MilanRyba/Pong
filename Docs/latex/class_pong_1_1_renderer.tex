@@ -1,0 +1,63 @@
+\doxysection{Pong\+::Renderer Class Reference}
+\hypertarget{class_pong_1_1_renderer}{}\label{class_pong_1_1_renderer}\index{Pong::Renderer@{Pong::Renderer}}
+
+
+Responsible for rendering pixels to the LCD display.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pong_1_1_renderer_a16ca06651072cc8c8c5cefb3da863ad7}{Renderer}} (uint32\+\_\+t in\+Width, uint32\+\_\+t in\+Height)
+\item 
+\Hypertarget{class_pong_1_1_renderer_a5981acd22d5d59b15ee57727eb98c142}\label{class_pong_1_1_renderer_a5981acd22d5d59b15ee57727eb98c142} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Renderer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_renderer_ae956e4d03958dfe2a7dd283a014da52b}\label{class_pong_1_1_renderer_ae956e4d03958dfe2a7dd283a014da52b} 
+void {\bfseries Draw} ()
+\begin{DoxyCompactList}\small\item\em Draw the current\textquotesingle{}s image buffer contents to the LCD display. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_renderer_a405f283159b45d23d87e42d56170665e}\label{class_pong_1_1_renderer_a405f283159b45d23d87e42d56170665e} 
+void {\bfseries Clear} (uint16\+\_\+t in\+Color=0x00)
+\begin{DoxyCompactList}\small\item\em Clear the image buffer. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_renderer_ac620db92db785b67c525ee3adf777864}\label{class_pong_1_1_renderer_ac620db92db785b67c525ee3adf777864} 
+void {\bfseries Clear\+And\+Draw} (uint16\+\_\+t in\+Color)
+\begin{DoxyCompactList}\small\item\em Clear the image buffer and draw it to the LCD display. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_renderer_aff036e057964f141e9d1bce3854a8e20}\label{class_pong_1_1_renderer_aff036e057964f141e9d1bce3854a8e20} 
+void {\bfseries Draw\+Paddle} (const \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}} \&in\+Paddle, uint16\+\_\+t in\+Color)
+\begin{DoxyCompactList}\small\item\em Draw a paddle. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_renderer_a2816bdf371bbf735a47da5121f95a022}\label{class_pong_1_1_renderer_a2816bdf371bbf735a47da5121f95a022} 
+void {\bfseries Draw\+Ball} (const \mbox{\hyperlink{class_pong_1_1_ball}{Ball}} \&in\+Ball, uint16\+\_\+t in\+Color)
+\begin{DoxyCompactList}\small\item\em Draw a ball. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_renderer_a73bb33e22f392e923c254bfff5dcdd36}\label{class_pong_1_1_renderer_a73bb33e22f392e923c254bfff5dcdd36} 
+void {\bfseries Draw\+Text} (uint32\+\_\+t inX, uint32\+\_\+t inY, const char \texorpdfstring{$\ast$}{*}in\+Text, uint16\+\_\+t in\+Color=0xffff)
+\begin{DoxyCompactList}\small\item\em Draw a string in screen coordinates. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_renderer_a31c5c86c6ae0b2a95c62f83dad42f228}\label{class_pong_1_1_renderer_a31c5c86c6ae0b2a95c62f83dad42f228} 
+void {\bfseries Draw\+Pixel} (uint32\+\_\+t inX, uint32\+\_\+t inY, uint16\+\_\+t in\+Color=0xffff)
+\begin{DoxyCompactList}\small\item\em Draw a single pixel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsible for rendering pixels to the LCD display. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pong_1_1_renderer_a16ca06651072cc8c8c5cefb3da863ad7}\label{class_pong_1_1_renderer_a16ca06651072cc8c8c5cefb3da863ad7} 
+\index{Pong::Renderer@{Pong::Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Pong::Renderer@{Pong::Renderer}}
+\doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}}
+{\footnotesize\ttfamily Pong\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{in\+Width,  }\item[{uint32\+\_\+t}]{in\+Height }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em Width} & and height of the LCD display \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/Renderer.\+h\item 
+Source/Renderer.\+cpp\end{DoxyCompactItemize}

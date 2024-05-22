@@ -1,0 +1,52 @@
+\doxysection{Renderer.\+h}
+\hypertarget{_renderer_8h_source}{}\label{_renderer_8h_source}\index{Source/Renderer.h@{Source/Renderer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Font.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }Pong\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }Paddle;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }Ball;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pong_1_1_renderer}{Renderer}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_renderer}{Renderer}}(uint32\_t\ inWidth,\ uint32\_t\ inHeight);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_renderer_a5981acd22d5d59b15ee57727eb98c142}{\string~Renderer}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_ae956e4d03958dfe2a7dd283a014da52b}{Draw}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a405f283159b45d23d87e42d56170665e}{Clear}}(uint16\_t\ inColor\ =\ 0x00);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_ac620db92db785b67c525ee3adf777864}{ClearAndDraw}}(uint16\_t\ inColor);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_aff036e057964f141e9d1bce3854a8e20}{DrawPaddle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}}\&\ inPaddle,\ uint16\_t\ inColor);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a2816bdf371bbf735a47da5121f95a022}{DrawBall}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pong_1_1_ball}{Ball}}\&\ inBall,\ uint16\_t\ inColor);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a73bb33e22f392e923c254bfff5dcdd36}{DrawText}}(uint32\_t\ inX,\ uint32\_t\ inY,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ inText,\ uint16\_t\ inColor\ =\ 0xffff);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a31c5c86c6ae0b2a95c62f83dad42f228}{DrawPixel}}(uint32\_t\ inX,\ uint32\_t\ inY,\ uint16\_t\ inColor\ =\ 0xffff);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ if\ a\ pixel\ at\ coordinates\ (inX,\ inY)\ can\ be\ written\ to\ image\ buffer}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ClipPixel(\textcolor{keywordtype}{int}\ inX,\ \textcolor{keywordtype}{int}\ inY)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mHeight;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ uint16\_t*\ mImageData\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ uint8\_t*\ mParallelLCDMemBase\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_font}{Font}}\ mFont;}
+\DoxyCodeLine{00055\ \ \ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}

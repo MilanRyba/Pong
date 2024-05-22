@@ -1,0 +1,81 @@
+\doxysection{Paddle.\+h}
+\hypertarget{_paddle_8h_source}{}\label{_paddle_8h_source}\index{Source/Paddle.h@{Source/Paddle.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }Pong\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}}}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_paddle_a1d54e7e1565f2bc04999537350e628b6}{Paddle}}(uint32\_t\ inX,\ uint32\_t\ inY)\ :\ mX(inX),\ \mbox{\hyperlink{class_pong_1_1_paddle_ae5bdb6106c13eff9f7b1d99117482fc3}{Y}}(inY)\ \{\}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_paddle_a96688c3744f37d27636315d520260be3}{Reset}}()\ \{\ mHoles.clear();\ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pong_1_1_paddle_a612e6470eb9ced75312c44d692f5007b}{InsideHole}}(uint32\_t\ inY);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_paddle_a09a39b8b15d4a677e95f3b26769fb660}{CreateHole}}(uint32\_t\ inY);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ uint32\_t\ GetX()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mX;\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ uint32\_t\ GetWidth()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mWidth;\ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ uint32\_t\ GetHeight()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mHeight;\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_pong_1_1_paddle_ae5bdb6106c13eff9f7b1d99117482fc3}{Y}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pong_1_1_paddle_1_1_hole}{Hole}}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pong_1_1_paddle_1_1_hole_ad5f4b559488b6e44ca83bcdf6c73157c}{Hole}}(uint32\_t\ inMin,\ uint32\_t\ inMax)\ :\ mMin(inMin),\ mMax(inMax)\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_pong_1_1_paddle_1_1_hole_a637abf09b63a43e64d63127fa3be3617}{GetMin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mMin;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_pong_1_1_paddle_1_1_hole_ab17c7c225534f948c0b0d5ebe671dce2}{GetMax}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mMax;\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ this\ hole\ overlaps\ another\ hole}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Overlaps(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_pong_1_1_paddle_1_1_hole}{Hole}}\&\ inOther)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(mMin\ >\ inOther.mMax\ ||\ mMax\ <\ inOther.mMin);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ this\ hole\ lies\ next\ to\ another\ hole}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Touches(\textcolor{keyword}{const}\ Hole\&\ inOther)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00051\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (mMin\ -\/\ 1\ ==\ inOther.mMax)\ ||\ (mMax\ +\ 1\ ==\ inOther.mMin);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ a\ point\ is\ inside\ this\ hole}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Contains(\textcolor{keyword}{const}\ uint32\_t\ inPoint)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mMin\ <=\ inPoint\ \&\&\ mMax\ >=\ inPoint;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Encapsulate\ hole\ in\ hole}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Encapsulate(\textcolor{keyword}{const}\ Hole\&\ inRHS)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mMin\ =\ std::min(mMin,\ inRHS.mMin);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mMax\ =\ std::max(mMax,\ inRHS.mMax);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ mMin;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ mMax;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Hole>\&\ GetHoles()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mHoles;\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mX;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Position\ of\ the\ left\ side}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mWidth\ =\ 6;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Width\ of\ the\ paddle}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mHeight\ =\ 50;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Height\ of\ the\ paddle}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Go\ through\ all\ holes\ and\ merge\ those\ that\ overlap\ or\ touch}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MergeHoles();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::vector<Hole>\ mHoles;}
+\DoxyCodeLine{00084\ \ \ \ \ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}

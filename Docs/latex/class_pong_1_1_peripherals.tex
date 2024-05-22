@@ -1,0 +1,56 @@
+\doxysection{Pong\+::Peripherals Class Reference}
+\hypertarget{class_pong_1_1_peripherals}{}\label{class_pong_1_1_peripherals}\index{Pong::Peripherals@{Pong::Peripherals}}
+
+
+\doxylink{class_pong_1_1_peripherals}{Peripherals} interface class which keeps track on the status of all knobs and provides a way control the board\textquotesingle{}s LED\textquotesingle{}s.  
+
+
+
+
+{\ttfamily \#include $<$Peripherals.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}\label{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56} 
+enum class \mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}} \{ {\bfseries Red}
+, {\bfseries Green}
+, {\bfseries Blue}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to identify knob type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pong_1_1_peripherals_a7f48700e0a4ef83d91e735fc51326391}\label{class_pong_1_1_peripherals_a7f48700e0a4ef83d91e735fc51326391} 
+{\bfseries Peripherals} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_peripherals_a740f0f1ef89a759dbaa4429b130387e1}\label{class_pong_1_1_peripherals_a740f0f1ef89a759dbaa4429b130387e1} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Update each of the peripherals on the board. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_peripherals_a69767bbd33c061e4f212f51985436dae}\label{class_pong_1_1_peripherals_a69767bbd33c061e4f212f51985436dae} 
+bool {\bfseries Is\+Knob\+Pressed} (\mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}} in\+Color) const
+\begin{DoxyCompactList}\small\item\em Checks if a knob is pressed or not. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_peripherals_a79d67a4cf68e6012f90cd79bded2488f}\label{class_pong_1_1_peripherals_a79d67a4cf68e6012f90cd79bded2488f} 
+bool {\bfseries Is\+Knob\+Down} (\mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}} in\+Color) const
+\begin{DoxyCompactList}\small\item\em Checks if a knob is being held down or not. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_peripherals_a8c101bdf78ffeafa25a9b3234135bb9e}\label{class_pong_1_1_peripherals_a8c101bdf78ffeafa25a9b3234135bb9e} 
+int {\bfseries Get\+Knob\+Position} (\mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}} in\+Color) const
+\begin{DoxyCompactList}\small\item\em Get knob\textquotesingle{}s current position. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_peripherals_ad18c9b61f7c255ab4b1b951e83adb9ac}\label{class_pong_1_1_peripherals_ad18c9b61f7c255ab4b1b951e83adb9ac} 
+int {\bfseries Get\+Knob\+Delta} (\mbox{\hyperlink{class_pong_1_1_peripherals_a721d897ff4b3a7deb9062f970d7daf56}{Knob}} in\+Color) const
+\begin{DoxyCompactList}\small\item\em Get knob\textquotesingle{}s current change in position. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_peripherals_a38da5ef82a5c64e59397e414ad97cad2}\label{class_pong_1_1_peripherals_a38da5ef82a5c64e59397e414ad97cad2} 
+void {\bfseries Set\+LEDLine} (uint32\+\_\+t in\+Value)
+\begin{DoxyCompactList}\small\item\em Light up the LED line with a 32-\/bit number where each bit represent a single LED. \end{DoxyCompactList}\item 
+\Hypertarget{class_pong_1_1_peripherals_a8146609ee9616a01a69f87ef60af47aa}\label{class_pong_1_1_peripherals_a8146609ee9616a01a69f87ef60af47aa} 
+void {\bfseries Set\+RGBLEDs} (uint32\+\_\+t in\+Value)
+\begin{DoxyCompactList}\small\item\em Set the color on two RGB LED\textquotesingle{}s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_pong_1_1_peripherals}{Peripherals} interface class which keeps track on the status of all knobs and provides a way control the board\textquotesingle{}s LED\textquotesingle{}s. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/Peripherals.\+h\item 
+Source/Peripherals.\+cpp\end{DoxyCompactItemize}
