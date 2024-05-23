@@ -31,6 +31,8 @@ namespace Pong {
 		Playing,
 	};
 
+	struct ModifierState;
+
 	/// Contains the entire application
 	class Application
 	{
@@ -56,7 +58,7 @@ namespace Pong {
 		/// Return from Playing state back to Menu state
 		void ReturnToMainMenu();
 
-		void SetModifier(ModifiersMenu::ModifierState inModifier);
+		void SetModifier(ModifierState inModifier);
 
 		template<typename T>
 		void SetMenu() { mMenu = std::make_shared<T>(*this); }
@@ -99,6 +101,8 @@ namespace Pong {
 
 		Modifier mModifier = Modifier::None;
 		uint32_t mRGBLedColor = 0x0;						///< Color of the RGB LED's
+
+		bool mLeftWonLastGame = false;
 
 		bool mRunning = true;
 	};

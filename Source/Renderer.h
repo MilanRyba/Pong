@@ -30,7 +30,8 @@ namespace Pong {
 		void ClearAndDraw(uint16_t inColor);
 
 		/// Draw a paddle
-		void DrawPaddle(const Paddle& inPaddle, uint16_t inColor);
+		/// @param inAttrition Should the paddle be rendered with holes
+		void DrawPaddle(const Paddle& inPaddle, bool inAttition, uint16_t inColor);
 
 		/// Draw a ball
 		void DrawBall(const Ball& inBall, uint16_t inColor);

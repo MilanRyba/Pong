@@ -20,7 +20,28 @@ uint32\+\_\+t {\bfseries Get\+Min} () const
 \begin{DoxyCompactList}\small\item\em Get holes\textquotesingle{}s upper bound. \end{DoxyCompactList}\item 
 \Hypertarget{struct_pong_1_1_paddle_1_1_hole_ab17c7c225534f948c0b0d5ebe671dce2}\label{struct_pong_1_1_paddle_1_1_hole_ab17c7c225534f948c0b0d5ebe671dce2} 
 uint32\+\_\+t {\bfseries Get\+Max} () const
-\begin{DoxyCompactList}\small\item\em Get holes\textquotesingle{}s lower bound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get holes\textquotesingle{}s lower bound. \end{DoxyCompactList}\item 
+\Hypertarget{struct_pong_1_1_paddle_1_1_hole_a54ef044213a53fa89cf0583097be5b36}\label{struct_pong_1_1_paddle_1_1_hole_a54ef044213a53fa89cf0583097be5b36} 
+bool {\bfseries Overlaps} (const \mbox{\hyperlink{struct_pong_1_1_paddle_1_1_hole}{Hole}} \&in\+Other) const
+\item 
+\Hypertarget{struct_pong_1_1_paddle_1_1_hole_a853e922d7351e666a5782811f81d2536}\label{struct_pong_1_1_paddle_1_1_hole_a853e922d7351e666a5782811f81d2536} 
+bool {\bfseries Touches} (const \mbox{\hyperlink{struct_pong_1_1_paddle_1_1_hole}{Hole}} \&in\+Other) const
+\item 
+\Hypertarget{struct_pong_1_1_paddle_1_1_hole_a705763c314d8e2762d96fdb68535850b}\label{struct_pong_1_1_paddle_1_1_hole_a705763c314d8e2762d96fdb68535850b} 
+bool {\bfseries Contains} (const uint32\+\_\+t in\+Point) const
+\item 
+\Hypertarget{struct_pong_1_1_paddle_1_1_hole_a1cfc436fd9bdd8498bcaaac19c5df64e}\label{struct_pong_1_1_paddle_1_1_hole_a1cfc436fd9bdd8498bcaaac19c5df64e} 
+void {\bfseries Encapsulate} (const \mbox{\hyperlink{struct_pong_1_1_paddle_1_1_hole}{Hole}} \&in\+RHS)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_pong_1_1_paddle_1_1_hole_ae024b93da7268b090a62dfb7277157e7}\label{struct_pong_1_1_paddle_1_1_hole_ae024b93da7268b090a62dfb7277157e7} 
+uint32\+\_\+t {\bfseries m\+Min}
+\begin{DoxyCompactList}\small\item\em Holes min and max. \end{DoxyCompactList}\item 
+\Hypertarget{struct_pong_1_1_paddle_1_1_hole_a13e73774bd2e822eac29ced8a64c45e4}\label{struct_pong_1_1_paddle_1_1_hole_a13e73774bd2e822eac29ced8a64c45e4} 
+uint32\+\_\+t {\bfseries m\+Max}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

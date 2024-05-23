@@ -31,7 +31,6 @@ namespace Pong {
 
 		font_descriptor_t* mDescriptor;
 		uint32_t mScale = 1;				///< Scale of characters
-		uint32_t mSpacing = 1;				///< Spacing between characters
 	};
 
 }

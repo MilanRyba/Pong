@@ -8,6 +8,8 @@
 
 #include <cstdint>
 #include <iostream>
+#include <stdlib.h>
+#include <vector>
 
 namespace Pong {
 
@@ -60,16 +62,22 @@ namespace Pong {
 		}
 	}
 
-	void Renderer::DrawPaddle(const Paddle& inPaddle, uint16_t inColor)
+	void Renderer::DrawPaddle(const Paddle& inPaddle, bool inAttition, uint16_t inColor)
 	{
 		const std::vector<Paddle::Hole>& holes = inPaddle.GetHoles();
 
 		for (uint32_t y = inPaddle.Y; y < inPaddle.Y + inPaddle.GetHeight(); y++)
 		{
-			for (const auto& hole : holes)
+			if (inAttition)
 			{
-				if (hole.GetMin() == y)
-					y = hole.GetMax();
+				for (const auto& hole : holes)
+				{
+					if (hole.GetMin() + inPaddle.Y == y)
+					{
+						y = hole.GetMax() + inPaddle.Y;
+						break;
+					}
+				}
 			}
 
 			for (uint32_t x = inPaddle.GetX(); x < inPaddle.GetX() + inPaddle.GetWidth(); x++)
@@ -79,9 +87,9 @@ namespace Pong {
 
 	void Renderer::DrawBall(const Ball& inBall, uint16_t inColor)
 	{
-		for (int y = inBall.GetY(); y < inBall.GetY() + Ball::cSize; y++)
+		for (int y = inBall.GetY(); y < inBall.GetY() + (int)Ball::cSize; y++)
 		{
-			for (int x = inBall.GetX(); x < inBall.GetX() + Ball::cSize; x++)
+			for (int x = inBall.GetX(); x < inBall.GetX() +(int)Ball::cSize; x++)
 				DrawPixel(x, y, inColor);
 		}
 	}
@@ -101,7 +109,7 @@ namespace Pong {
 
 	bool Renderer::ClipPixel(int inX, int inY) const
 	{
-		return inX < 0 || inX >= mWidth || inY < 0 || inY >= mHeight;
+		return inX < 0 || inX >= (int)mWidth || inY < 0 || inY >= (int)mHeight;
 	}
 
 }

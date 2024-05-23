@@ -11,14 +11,13 @@
 #include "mz_apo/mzapo_phys.h"
 #include "mz_apo/mzapo_regs.h"
 
-#include "src/Pong.h"
+#include "Source/Application.h"
 
 #include <iostream>
 
-// TODO: Test if pressing two knobs is ok
 int main()
 {
-    Application::Application pong;
+    Pong::Application pong;
     std::cout << "Running\n";
     pong.Run();
     std::cout << "Exited\n";

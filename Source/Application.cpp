@@ -1,5 +1,5 @@
+#include "Application.h"
 #include "Peripherals.h"
-#include "Pong.h"
 #include "Utils.h"
 
 #include "Menu/GameUI.h"
@@ -37,9 +37,6 @@ namespace Pong {
 		{
 			OnUpdate();
 			OnRender();
-
-			if (mPeripherals->IsKnobPressed(Peripherals::Knob::Red) && mPeripherals->IsKnobPressed(Peripherals::Knob::Blue))
-				Close();
 		}
 	}
 
@@ -109,6 +106,7 @@ namespace Pong {
 			else
 				mRightScore++;
 
+			mLeftWonLastGame = false;
 			ResetBoard();
 		}
 		else if (mBall.GetX() + Ball::cSize > cWidth)
@@ -118,6 +116,7 @@ namespace Pong {
 			else
 				mLeftScore++;
 
+			mLeftWonLastGame = true;
 			ResetBoard();
 		}
 
@@ -131,14 +130,15 @@ namespace Pong {
 			mRenderer.Clear();
 			mMenu->OnRender(mRenderer);
 
-			mRenderer.DrawPaddle(mLeftPaddle, 0xf800);
-			mRenderer.DrawPaddle(mRightPaddle, 0x001f);
+			bool attrition = HasModierAnyFlags(Modifier::Attrition);
+			mRenderer.DrawPaddle(mLeftPaddle, attrition, 0xf800);
+			mRenderer.DrawPaddle(mRightPaddle, attrition, 0x001f);
 
-			mRenderer.DrawBall(mBall, 0xffffffff);
+			mRenderer.DrawBall(mBall, 0xffff);
 		}
 		else if (mState == GameState::Menu)
 		{
-			mRenderer.Clear(0xf0);
+			mRenderer.Clear();
 			mMenu->OnRender(mRenderer);
 		}
 		mRenderer.Draw();
@@ -150,6 +150,9 @@ namespace Pong {
 
 		mLeftScore = 0;
 		mRightScore = 0;
+
+		mLeftPaddle.Reset();
+		mRightPaddle.Reset();
 		ResetBoard();
 	}
 
@@ -164,7 +167,7 @@ namespace Pong {
 		UpdateLedLine();
 	}
 
-	void Application::SetModifier(ModifiersMenu::ModifierState inModifier)
+	void Application::SetModifier(ModifierState inModifier)
 	{
 		if (inModifier.Enabled)
 		{
@@ -185,6 +188,11 @@ namespace Pong {
 		mPointCounter = 1;
 		mBall = Ball((cWidth - 2) / 2, (cHeight - 3)/ 2);
 		mState = GameState::WaitingToStart;
+
+		if (mLeftWonLastGame)
+			mRightPaddle.Reset();
+		else
+			mLeftPaddle.Reset();
 	}
 
 	void Application::UpdateLedLine()

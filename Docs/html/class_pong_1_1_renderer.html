@@ -105,10 +105,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> (uint16_t i
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ClearAndDraw</b> (uint16_t inColor)</td></tr>
 <tr class="memdesc:ac620db92db785b67c525ee3adf777864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the image buffer and draw it to the LCD display. <br /></td></tr>
 <tr class="separator:ac620db92db785b67c525ee3adf777864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff036e057964f141e9d1bce3854a8e20"><td class="memItemLeft" align="right" valign="top"><a id="aff036e057964f141e9d1bce3854a8e20" name="aff036e057964f141e9d1bce3854a8e20"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawPaddle</b> (const <a class="el" href="class_pong_1_1_paddle.html">Paddle</a> &amp;inPaddle, uint16_t inColor)</td></tr>
-<tr class="memdesc:aff036e057964f141e9d1bce3854a8e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a paddle. <br /></td></tr>
-<tr class="separator:aff036e057964f141e9d1bce3854a8e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4164c2cdaf5fa4222dc0f5de96ae58bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pong_1_1_renderer.html#a4164c2cdaf5fa4222dc0f5de96ae58bf">DrawPaddle</a> (const <a class="el" href="class_pong_1_1_paddle.html">Paddle</a> &amp;inPaddle, bool inAttition, uint16_t inColor)</td></tr>
+<tr class="separator:a4164c2cdaf5fa4222dc0f5de96ae58bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2816bdf371bbf735a47da5121f95a022"><td class="memItemLeft" align="right" valign="top"><a id="a2816bdf371bbf735a47da5121f95a022" name="a2816bdf371bbf735a47da5121f95a022"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawBall</b> (const <a class="el" href="class_pong_1_1_ball.html">Ball</a> &amp;inBall, uint16_t inColor)</td></tr>
 <tr class="memdesc:a2816bdf371bbf735a47da5121f95a022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a ball. <br /></td></tr>
@@ -153,6 +151,47 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawPixel</b> (uint32
 <p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Width</td><td>and height of the LCD display </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4164c2cdaf5fa4222dc0f5de96ae58bf" name="a4164c2cdaf5fa4222dc0f5de96ae58bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4164c2cdaf5fa4222dc0f5de96ae58bf">&#9670;&#160;</a></span>DrawPaddle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pong::Renderer::DrawPaddle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_pong_1_1_paddle.html">Paddle</a> &amp;&#160;</td>
+          <td class="paramname"><em>inPaddle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inAttition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>inColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Draw a paddle </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inAttrition</td><td>Should the paddle be rendered with holes </td></tr>
   </table>
   </dd>
 </dl>

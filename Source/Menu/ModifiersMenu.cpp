@@ -20,9 +20,9 @@ namespace Pong {
 	ModifiersMenu::ModifiersMenu(Application& inGame)
 		: mGameRef(inGame)
 	{
-		mModifiers[0] = { Modifier::AdditivePointSystem, 0xff2a5580, false };
-		mModifiers[1] = { Modifier::AcceleratingBall, 0xff802a55, false };
-		mModifiers[2] = { Modifier::Attrition, 0xff55802a, false };
+		mModifiers[0] = { Modifier::AdditivePointSystem, 0xff2a2aab, false };
+		mModifiers[1] = { Modifier::AcceleratingBall, 0xffab2a2a, false };
+		mModifiers[2] = { Modifier::Attrition, 0xff2aab2a, false };
 	}
 
 	void ModifiersMenu::OnUpdate(Peripherals* inPeripherals)
@@ -35,7 +35,7 @@ namespace Pong {
 		{
 			ModifierState& state = mModifiers[mSelected];
 			state.Enabled = state.Enabled ? false : true;
-			mGameRef.SetModifier(state.Mod, state.Enabled);
+			mGameRef.SetModifier(state);
 		}
 
 		// Return to Main Menu
@@ -49,8 +49,8 @@ namespace Pong {
 		for (int i = 0; i < mModifiers.size(); i++)
 		{
 			const ModifierState& mod = mModifiers[i];
-			uint32_t x = mSelected == i ? 50 : 30;
-			uint16_t color = mod.Enabled ? 0xffff : 0xf0f0;
+			uint32_t x = mod.Enabled ? 50 : 30;
+			uint16_t color = mSelected == i ? 0xffff : 0xf0f0;
 
 			inRenderer.DrawText(x, 10 + i * 60, sGetModifierName(mod.Mod), color);
 		}

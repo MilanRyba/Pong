@@ -14,7 +14,7 @@ namespace Pong {
     void Font::DrawText(uint32_t inX, uint32_t inY, const char* inText, uint16_t inColor)
     {
         for (uint32_t i = 0; inText[i] != '\0'; i++)
-            DrawChar(inX + (mDescriptor->maxwidth + mSpacing) * i * mScale, inY, inText[i], inColor);
+            DrawChar(inX + 12 * i * mScale, inY, inText[i], inColor);
     }
 
 	void Font::DrawChar(uint32_t inX, uint32_t inY, char inChar, uint16_t inColor)

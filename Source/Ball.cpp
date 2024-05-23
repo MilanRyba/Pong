@@ -1,5 +1,5 @@
 #include "Ball.h"
-#include "Pong.h"
+#include "Application.h"
 
 #include <chrono>
 #include <iostream>
@@ -19,7 +19,7 @@ namespace Pong {
 	void Ball::OnUpdate()
 	{
 		// Wall collisions
-		if (mY + mDeltaY < 0 || mY + cSize + mDeltaY >= Pong::cHeight)
+		if (mY + mDeltaY < 0 || mY + cSize + mDeltaY >= Application::cHeight)
 			mDeltaY *= -1;
 
 		mX += mDeltaX;
@@ -29,7 +29,7 @@ namespace Pong {
 	void Ball::Launch()
 	{
 		auto seed = std::chrono::system_clock::now();
-		std::default_random_engine random(seed.time_since_epoch().count());
+		std::default_random_engine random((uint32_t)seed.time_since_epoch().count());
 
 		std::uniform_int_distribution<int> dir_dist(0, 1);
 		int direction = dir_dist(random) == 0 ? -1 : 1;
@@ -48,8 +48,8 @@ namespace Pong {
 		if (direction == -1)
 			angle = 180.0f - angle;
 
-		mDeltaX = (float)mSpeed * cos(angle * Deg2Rad);
-		mDeltaY = (float)mSpeed * sin(angle * Deg2Rad);
+		mDeltaX = (int)((float)mSpeed * cos(angle * Deg2Rad));
+		mDeltaY = (int)((float)mSpeed * sin(angle * Deg2Rad));
 
 		mDeltaX += (mDeltaX < 0 ? -1 : 1) * -1;
 		mDeltaY += (mDeltaY < 0 ? -1 : 1);
@@ -72,7 +72,7 @@ namespace Pong {
 		if (mY + cSize < inPaddle.Y || mY > inPaddle.Y + inPaddle.GetHeight())
 			return false;
 		
-		if (inPaddle.GetX() < Pong::cWidth / 2)
+		if (inPaddle.GetX() < Application::cWidth / 2)
 		{
 			// Left paddle
 			uint32_t paddle_x = inPaddle.GetX() + inPaddle.GetWidth();
@@ -139,7 +139,7 @@ namespace Pong {
 	void Ball::BounceOff(const Paddle& inPaddle)
 	{
 		auto seed = std::chrono::system_clock::now();
-		std::default_random_engine random(seed.time_since_epoch().count());
+		std::default_random_engine random((uint32_t)seed.time_since_epoch().count());
 
 		std::uniform_int_distribution<int> bounce_dir(0, 10);
 		int bounce = bounce_dir(random);
@@ -164,8 +164,8 @@ namespace Pong {
 			if (mDeltaX > 0)
 				angle = 180.0f - angle;
 
-			mDeltaX = (float)mSpeed * cos(angle * Deg2Rad);
-			mDeltaY = (float)mSpeed * sin(angle * Deg2Rad);
+			mDeltaX = (int)((float)mSpeed * cos(angle * Deg2Rad));
+			mDeltaY = (int)((float)mSpeed * sin(angle * Deg2Rad));
 
 			mDeltaX += (mDeltaX < 0 ? -1 : 1) * mAdditiveSpeed;
 			mDeltaY += (mDeltaY < 0 ? -1 : 1) * mAdditiveSpeed;

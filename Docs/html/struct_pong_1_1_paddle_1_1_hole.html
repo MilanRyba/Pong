@@ -75,6 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="struct_pong_1_1_paddle_1_1_hole-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Pong::Paddle::Hole Struct Reference</div></div>
 </div><!--header-->
@@ -99,6 +100,28 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetMin</b> () con
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetMax</b> () const</td></tr>
 <tr class="memdesc:ab17c7c225534f948c0b0d5ebe671dce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get holes's lower bound. <br /></td></tr>
 <tr class="separator:ab17c7c225534f948c0b0d5ebe671dce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ef044213a53fa89cf0583097be5b36"><td class="memItemLeft" align="right" valign="top"><a id="a54ef044213a53fa89cf0583097be5b36" name="a54ef044213a53fa89cf0583097be5b36"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Overlaps</b> (const <a class="el" href="struct_pong_1_1_paddle_1_1_hole.html">Hole</a> &amp;inOther) const</td></tr>
+<tr class="separator:a54ef044213a53fa89cf0583097be5b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853e922d7351e666a5782811f81d2536"><td class="memItemLeft" align="right" valign="top"><a id="a853e922d7351e666a5782811f81d2536" name="a853e922d7351e666a5782811f81d2536"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Touches</b> (const <a class="el" href="struct_pong_1_1_paddle_1_1_hole.html">Hole</a> &amp;inOther) const</td></tr>
+<tr class="separator:a853e922d7351e666a5782811f81d2536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a705763c314d8e2762d96fdb68535850b"><td class="memItemLeft" align="right" valign="top"><a id="a705763c314d8e2762d96fdb68535850b" name="a705763c314d8e2762d96fdb68535850b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Contains</b> (const uint32_t inPoint) const</td></tr>
+<tr class="separator:a705763c314d8e2762d96fdb68535850b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cfc436fd9bdd8498bcaaac19c5df64e"><td class="memItemLeft" align="right" valign="top"><a id="a1cfc436fd9bdd8498bcaaac19c5df64e" name="a1cfc436fd9bdd8498bcaaac19c5df64e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Encapsulate</b> (const <a class="el" href="struct_pong_1_1_paddle_1_1_hole.html">Hole</a> &amp;inRHS)</td></tr>
+<tr class="separator:a1cfc436fd9bdd8498bcaaac19c5df64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ae024b93da7268b090a62dfb7277157e7"><td class="memItemLeft" align="right" valign="top"><a id="ae024b93da7268b090a62dfb7277157e7" name="ae024b93da7268b090a62dfb7277157e7"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>mMin</b></td></tr>
+<tr class="memdesc:ae024b93da7268b090a62dfb7277157e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holes min and max. <br /></td></tr>
+<tr class="separator:ae024b93da7268b090a62dfb7277157e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e73774bd2e822eac29ced8a64c45e4"><td class="memItemLeft" align="right" valign="top"><a id="a13e73774bd2e822eac29ced8a64c45e4" name="a13e73774bd2e822eac29ced8a64c45e4"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>mMax</b></td></tr>
+<tr class="separator:a13e73774bd2e822eac29ced8a64c45e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Data structure for dealing with holes inside paddles. </p>

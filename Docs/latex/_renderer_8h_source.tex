@@ -26,27 +26,27 @@
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_ac620db92db785b67c525ee3adf777864}{ClearAndDraw}}(uint16\_t\ inColor);}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_aff036e057964f141e9d1bce3854a8e20}{DrawPaddle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}}\&\ inPaddle,\ uint16\_t\ inColor);}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a2816bdf371bbf735a47da5121f95a022}{DrawBall}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pong_1_1_ball}{Ball}}\&\ inBall,\ uint16\_t\ inColor);}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a73bb33e22f392e923c254bfff5dcdd36}{DrawText}}(uint32\_t\ inX,\ uint32\_t\ inY,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ inText,\ uint16\_t\ inColor\ =\ 0xffff);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a31c5c86c6ae0b2a95c62f83dad42f228}{DrawPixel}}(uint32\_t\ inX,\ uint32\_t\ inY,\ uint16\_t\ inColor\ =\ 0xffff);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ if\ a\ pixel\ at\ coordinates\ (inX,\ inY)\ can\ be\ written\ to\ image\ buffer}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ClipPixel(\textcolor{keywordtype}{int}\ inX,\ \textcolor{keywordtype}{int}\ inY)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mHeight;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ uint16\_t*\ mImageData\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ uint8\_t*\ mParallelLCDMemBase\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_font}{Font}}\ mFont;}
-\DoxyCodeLine{00055\ \ \ \ \ \};}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a4164c2cdaf5fa4222dc0f5de96ae58bf}{DrawPaddle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}}\&\ inPaddle,\ \textcolor{keywordtype}{bool}\ inAttition,\ uint16\_t\ inColor);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a2816bdf371bbf735a47da5121f95a022}{DrawBall}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pong_1_1_ball}{Ball}}\&\ inBall,\ uint16\_t\ inColor);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a73bb33e22f392e923c254bfff5dcdd36}{DrawText}}(uint32\_t\ inX,\ uint32\_t\ inY,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ inText,\ uint16\_t\ inColor\ =\ 0xffff);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_renderer_a31c5c86c6ae0b2a95c62f83dad42f228}{DrawPixel}}(uint32\_t\ inX,\ uint32\_t\ inY,\ uint16\_t\ inColor\ =\ 0xffff);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ if\ a\ pixel\ at\ coordinates\ (inX,\ inY)\ can\ be\ written\ to\ image\ buffer}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ClipPixel(\textcolor{keywordtype}{int}\ inX,\ \textcolor{keywordtype}{int}\ inY)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mWidth;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t\ mHeight;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ uint16\_t*\ mImageData\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ uint8\_t*\ mParallelLCDMemBase\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_font}{Font}}\ mFont;}
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \}}
 
 \end{DoxyCode}

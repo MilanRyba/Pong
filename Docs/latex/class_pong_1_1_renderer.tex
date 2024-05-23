@@ -26,9 +26,8 @@ void {\bfseries Clear} (uint16\+\_\+t in\+Color=0x00)
 \Hypertarget{class_pong_1_1_renderer_ac620db92db785b67c525ee3adf777864}\label{class_pong_1_1_renderer_ac620db92db785b67c525ee3adf777864} 
 void {\bfseries Clear\+And\+Draw} (uint16\+\_\+t in\+Color)
 \begin{DoxyCompactList}\small\item\em Clear the image buffer and draw it to the LCD display. \end{DoxyCompactList}\item 
-\Hypertarget{class_pong_1_1_renderer_aff036e057964f141e9d1bce3854a8e20}\label{class_pong_1_1_renderer_aff036e057964f141e9d1bce3854a8e20} 
-void {\bfseries Draw\+Paddle} (const \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}} \&in\+Paddle, uint16\+\_\+t in\+Color)
-\begin{DoxyCompactList}\small\item\em Draw a paddle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pong_1_1_renderer_a4164c2cdaf5fa4222dc0f5de96ae58bf}{Draw\+Paddle}} (const \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}} \&in\+Paddle, bool in\+Attition, uint16\+\_\+t in\+Color)
+\item 
 \Hypertarget{class_pong_1_1_renderer_a2816bdf371bbf735a47da5121f95a022}\label{class_pong_1_1_renderer_a2816bdf371bbf735a47da5121f95a022} 
 void {\bfseries Draw\+Ball} (const \mbox{\hyperlink{class_pong_1_1_ball}{Ball}} \&in\+Ball, uint16\+\_\+t in\+Color)
 \begin{DoxyCompactList}\small\item\em Draw a ball. \end{DoxyCompactList}\item 
@@ -53,6 +52,20 @@ Responsible for rendering pixels to the LCD display.
 Constructor 
 \begin{DoxyParams}{Parameters}
 {\em Width} & and height of the LCD display \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pong_1_1_renderer_a4164c2cdaf5fa4222dc0f5de96ae58bf}\label{class_pong_1_1_renderer_a4164c2cdaf5fa4222dc0f5de96ae58bf} 
+\index{Pong::Renderer@{Pong::Renderer}!DrawPaddle@{DrawPaddle}}
+\index{DrawPaddle@{DrawPaddle}!Pong::Renderer@{Pong::Renderer}}
+\doxysubsubsection{\texorpdfstring{DrawPaddle()}{DrawPaddle()}}
+{\footnotesize\ttfamily void Pong\+::\+Renderer\+::\+Draw\+Paddle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}} \&}]{in\+Paddle,  }\item[{bool}]{in\+Attition,  }\item[{uint16\+\_\+t}]{in\+Color }\end{DoxyParamCaption})}
+
+Draw a paddle 
+\begin{DoxyParams}{Parameters}
+{\em in\+Attrition} & Should the paddle be rendered with holes \\
 \hline
 \end{DoxyParams}
 

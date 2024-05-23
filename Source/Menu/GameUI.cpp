@@ -35,7 +35,7 @@ namespace Pong {
 	void GameUI::OnRender(Renderer& inRenderer)
 	{
 		std::string text = sStringFormat("%u - %u", mGameRef.GetLeftScore(), mGameRef.GetRightScore());
-		inRenderer.DrawText(Pong::cWidth / 2 - 30, 10, text.c_str(), 0xffff);
+		inRenderer.DrawText(Application::cWidth / 2 - 30, 10, text.c_str(), 0xffff);
 	}
 
 }

@@ -10,28 +10,28 @@
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }Pong\ \{}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pong_1_1_modifiers_menu}{ModifiersMenu}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_pong_1_1_menu}{Menu}}}
-\DoxyCodeLine{00011\ \ \ \ \ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_modifiers_menu}{ModifiersMenu}}(\mbox{\hyperlink{class_pong_1_1_application}{Application}}\&\ inGame);}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Helper\ structure\ for\ managing\ modifier\ options}}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_pong_1_1_modifier_state}{ModifierState}}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ Modifier\ Mod\ =\ Modifier::None;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ Color\ =\ 0x0;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Enabled\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_modifiers_menu_a8033a86bcf9fc96211b7f847f36a04a1}{OnUpdate}}(\mbox{\hyperlink{class_pong_1_1_peripherals}{Peripherals}}*\ inPeripherals)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_modifiers_menu_a06c67d8bc79e5d818d1191869dbc8495}{OnRender}}(\mbox{\hyperlink{class_pong_1_1_renderer}{Renderer}}\&\ inRenderer)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_application}{Application}}\&\ mGameRef;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Helper\ structure\ for\ managing\ modifier\ options}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }ModifierState}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ Modifier\ Mod\ =\ Modifier::None;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ Color\ =\ 0x0;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Enabled\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ ModifierState()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ ModifierState(Modifier\ inMod,\ uint32\_t\ inColor,\ \textcolor{keywordtype}{bool}\ inEnabled)\ :\ Mod(inMod),\ Color(inColor),\ Enabled(inEnabled)\ \{\}}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ ModifierState\&\ operator\ =\ (ModifierState\ inRHS)\ \{\ Mod\ =\ inRHS.Mod;\ Color\ =\ inRHS.Colorl;\ Enabled\ =\ inRHS.Enabled;\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pong_1_1_modifier_state}{ModifierState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pong_1_1_modifier_state}{ModifierState}}(Modifier\ inMod,\ uint32\_t\ inColor,\ \textcolor{keywordtype}{bool}\ inEnabled)\ :\ Mod(inMod),\ Color(inColor),\ Enabled(inEnabled)\ \{\}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_pong_1_1_modifier_state}{ModifierState}}\&\ operator\ =\ (\mbox{\hyperlink{struct_pong_1_1_modifier_state}{ModifierState}}\ inRHS)\ \{\ Mod\ =\ inRHS.Mod;\ Color\ =\ inRHS.Color;\ Enabled\ =\ inRHS.Enabled;\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pong_1_1_modifiers_menu}{ModifiersMenu}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_pong_1_1_menu}{Menu}}}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_modifiers_menu}{ModifiersMenu}}(\mbox{\hyperlink{class_pong_1_1_application}{Application}}\&\ inGame);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_modifiers_menu_a8033a86bcf9fc96211b7f847f36a04a1}{OnUpdate}}(\mbox{\hyperlink{class_pong_1_1_peripherals}{Peripherals}}*\ inPeripherals)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_modifiers_menu_a06c67d8bc79e5d818d1191869dbc8495}{OnRender}}(\mbox{\hyperlink{class_pong_1_1_renderer}{Renderer}}\&\ inRenderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_application}{Application}}\&\ mGameRef;}
 \DoxyCodeLine{00033\ }
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::array<ModifierState,\ 3>\ mModifiers;\ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mSelected\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }

@@ -33,68 +33,72 @@
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ Playing,}
 \DoxyCodeLine{00032\ \ \ \ \ \};}
 \DoxyCodeLine{00033\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pong_1_1_application}{Application}}}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_application_abb4377999fb8450d56fb87f3a1d3a294}{Application}}();}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_application_af8abee2d5931c7c04e14e5a7386f4230}{\string~Application}}();}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_ac278407acd4a0687b03066af4c7b90c9}{Run}}();}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_acf0308eb04a079a5467cb30f6b3208a4}{OnUpdate}}();}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_a540e6e70b7693cabe8a0b6a88547efab}{OnRender}}();}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_a65822792f0d82b7d0c3d85abd5e9db85}{StartGame}}();}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_afea3bb041e8863e0b539a3b27b339b85}{ReturnToMainMenu}}();}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetModifier(ModifiersMenu::ModifierState\ inModifier);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }ModifierState;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pong_1_1_application}{Application}}}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_application_abb4377999fb8450d56fb87f3a1d3a294}{Application}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_application_af8abee2d5931c7c04e14e5a7386f4230}{\string~Application}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_ac278407acd4a0687b03066af4c7b90c9}{Run}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_acf0308eb04a079a5467cb30f6b3208a4}{OnUpdate}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_a540e6e70b7693cabe8a0b6a88547efab}{OnRender}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_a65822792f0d82b7d0c3d85abd5e9db85}{StartGame}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_afea3bb041e8863e0b539a3b27b339b85}{ReturnToMainMenu}}();}
 \DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMenu()\ \{\ mMenu\ =\ std::make\_shared<T>(*\textcolor{keyword}{this});\ \}}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_a6235df4ae9063ad9ee59e3f0dc00f8cf}{Close}}()\ \{\ mRunning\ =\ \textcolor{keyword}{false};\ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_pong_1_1_application_a261ded4f5cb2decd8cf90e33f5579cb0}{GetLeftScore}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mLeftScore;\ \}}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ uint32\_t\ GetRightScore()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mRightScore;\ \}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Modifier\ GetModifier()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mModifier;\ \}}
-\DoxyCodeLine{00071\ \ \ \ \ }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{class_pong_1_1_application_aac8260a9be0f2446b7aeb4e5c2ed7c8c}{cWidth}}\ =\ 480;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{class_pong_1_1_application_a61fa761212613d886e0780631920903c}{cHeight}}\ =\ 320;\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ board\ so\ that\ the\ ball\ can\ be\ launched}}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResetBoard();}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateLedLine();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetModifier(\mbox{\hyperlink{struct_pong_1_1_modifier_state}{ModifierState}}\ inModifier);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetMenu()\ \{\ mMenu\ =\ std::make\_shared<T>(*\textcolor{keyword}{this});\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pong_1_1_application_a6235df4ae9063ad9ee59e3f0dc00f8cf}{Close}}()\ \{\ mRunning\ =\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_pong_1_1_application_a261ded4f5cb2decd8cf90e33f5579cb0}{GetLeftScore}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mLeftScore;\ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ uint32\_t\ GetRightScore()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mRightScore;\ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ Modifier\ GetModifier()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mModifier;\ \}}
+\DoxyCodeLine{00073\ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{class_pong_1_1_application_aac8260a9be0f2446b7aeb4e5c2ed7c8c}{cWidth}}\ =\ 480;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{class_pong_1_1_application_a61fa761212613d886e0780631920903c}{cHeight}}\ =\ 320;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reset\ the\ board\ so\ that\ the\ ball\ can\ be\ launched}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ResetBoard();}
 \DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Helper\ function\ to\ see\ if\ a\ certain\ modifier\ is\ enabled}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ HasModierAnyFlags(Modifier\ inContains)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (uint32\_t(mModifier)\ \&\ uint32\_t(inContains))\ !=\ 0;\ \}}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_renderer}{Renderer}}\ mRenderer;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateLedLine();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Helper\ function\ to\ see\ if\ a\ certain\ modifier\ is\ enabled}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ HasModierAnyFlags(Modifier\ inContains)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (uint32\_t(mModifier)\ \&\ uint32\_t(inContains))\ !=\ 0;\ \}}
 \DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}}\ mLeftPaddle;}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}}\ mRightPaddle;}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_ball}{Ball}}\ mBall;}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_peripherals}{Peripherals}}*\ mPeripherals;}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ std::shared\_ptr<Menu>\ mMenu;}
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ GameState\ mState\ =\ GameState::Menu;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_renderer}{Renderer}}\ mRenderer;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}}\ mLeftPaddle;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_paddle}{Paddle}}\ mRightPaddle;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_ball}{Ball}}\ mBall;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pong_1_1_peripherals}{Peripherals}}*\ mPeripherals;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::shared\_ptr<Menu>\ mMenu;}
 \DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ uint32\_t\ mLeftScore\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ uint32\_t\ mRightScore\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ uint32\_t\ mPointCounter\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ GameState\ mState\ =\ GameState::Menu;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ uint32\_t\ mLeftScore\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ uint32\_t\ mRightScore\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00099\ }
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ Modifier\ mModifier\ =\ Modifier::None;}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ uint32\_t\ mRGBLedColor\ =\ 0x0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mRunning\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00104\ \ \ \ \ \};}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ uint32\_t\ mPointCounter\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ Modifier\ mModifier\ =\ Modifier::None;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ uint32\_t\ mRGBLedColor\ =\ 0x0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mLeftWonLastGame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ mRunning\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00108\ \ \ \ \ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \}}
 
 \end{DoxyCode}

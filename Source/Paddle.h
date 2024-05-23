@@ -38,8 +38,7 @@ namespace Pong {
 
 			/// Get holes's lower bound
 			uint32_t GetMax() const { return mMax; }
-
-		private:
+			
 			// Check if this hole overlaps another hole
 			bool Overlaps(const Hole& inOther) const
 			{
